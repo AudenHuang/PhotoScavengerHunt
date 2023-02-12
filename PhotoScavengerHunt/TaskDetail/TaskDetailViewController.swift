@@ -84,6 +84,12 @@ class TaskDetailViewController: UIViewController{
     }
 
     @IBAction func didTapTakePhotoButton(_ sender: Any) {
+        let locM = CLLocationManager()
+        if CLLocationManager.locationServicesEnabled(){
+            locM.delegate = self
+            locM.desiredAccuracy = kCLLocationAccuracyBest
+            locM.requestWhenInUseAuthorization()
+        }
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){
             let imagePicker = UIImagePickerController()
             imagePicker.sourceType = .camera
@@ -243,25 +249,20 @@ extension TaskDetailViewController: UIImagePickerControllerDelegate,UINavigation
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
+    func locationManager(_ manager:CLLocationManager, didUpdayeLocations locations:[CLLocation]){
+        guard let location = locations.last else{
+            return
+        }
+        print("Location: \(location)")
+    }
 
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let locM = CLLocationManager()
+        locM.startUpdatingLocation()
+
         picker.dismiss(animated: true, completion:nil)
-        
-        let latitude: CLLocationDegrees = 10
-        let longitude: CLLocationDegrees = 10
-
-        var location = CLLocation(latitude: latitude,
-                                  longitude: longitude)
-
-        if let type = info[UIImagePickerController.InfoKey.mediaType] as? PHAssetMediaType
-        {
-            let asset = PHAsset.fetchAssets(with: type, options: nil )[0]
-
-            location = asset.location ?? CLLocation(latitude: latitude,
-                                                    longitude: longitude)
-            
-        }
+        guard let location = locM.location else { return}
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else
         {
             return

@@ -31,13 +31,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Sq-Db-Qou">
                                                     <rect key="frame" x="8" y="0.0" width="385" height="20.333333333333332"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task to do                                                      " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhq-Vz-uWJ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Task to do                                                      " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhq-Vz-uWJ">
                                                             <rect key="frame" x="0.0" y="0.0" width="313.33333333333331" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cHq-PG-iUg">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cHq-PG-iUg">
                                                             <rect key="frame" x="313.33333333333331" y="0.6666666666666643" width="71.666666666666686" height="19.333333333333332"/>
                                                             <color key="tintColor" systemColor="systemRedColor"/>
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" weight="light">
@@ -46,7 +46,7 @@
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="cHq-PG-iUg" firstAttribute="centerX" secondItem="5Sq-Db-Qou" secondAttribute="centerX" constant="156.66999999999999" id="kEo-De-1zF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cHq-PG-iUg" secondAttribute="trailing" id="6XM-kU-A1T"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -55,6 +55,7 @@
                                                 <constraint firstItem="5Sq-Db-Qou" firstAttribute="leading" secondItem="3sP-rk-E1z" secondAttribute="leading" constant="8" id="b1U-Wi-9BJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="5Sq-Db-Qou" secondAttribute="trailing" id="ds1-Iw-gty"/>
                                                 <constraint firstItem="5Sq-Db-Qou" firstAttribute="top" secondItem="3sP-rk-E1z" secondAttribute="top" id="s9B-8l-6iG"/>
+                                                <constraint firstItem="5Sq-Db-Qou" firstAttribute="width" secondItem="3sP-rk-E1z" secondAttribute="width" multiplier="0.979644" id="toa-DL-CLU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -92,8 +93,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="GSH-GI-ImI">
-                                <rect key="frame" x="24" y="176.00000000000003" width="345" height="378.66666666666674"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="GSH-GI-ImI">
+                                <rect key="frame" x="24" y="176" width="345" height="378.66666666666674"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Afc-MQ-AoK">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="20.333333333333332"/>
@@ -106,17 +107,17 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fuV-2d-5JE">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fuV-2d-5JE">
                                         <rect key="frame" x="0.0" y="44.333333333333343" width="345" height="334.33333333333326"/>
                                         <subviews>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kls-Nl-rsq">
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kls-Nl-rsq">
                                                 <rect key="frame" x="0.0" y="0.0" width="345" height="300"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="mnh-Hw-FcI"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="mnh-Hw-FcI"/>
                                                 </constraints>
                                                 <standardMapConfiguration key="preferredConfiguration"/>
                                             </mapView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJM-QX-2lx">
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fJM-QX-2lx">
                                                 <rect key="frame" x="0.0" y="300" width="345" height="34.333333333333314"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWx-1q-tv5">
