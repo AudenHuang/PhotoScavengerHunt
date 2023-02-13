@@ -4,7 +4,7 @@ Submitted by: **Auden HUang**
 
 **PhotoScavengerHunt** is an app that present a list of tasks and present the detail description of the task if the user tap into one of the task. The user can complete the task by either uploading the photo or taking a photo. After submitting a photo, the photo will be pinned to the location it was taken, and the task will be mark as complete.
 
-Time spent: **5** hours spent in total
+Time spent: **6** hours spent in total
 
 ## Required Features
 
